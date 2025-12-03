@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 import People from "../../lib/data/people";
 
 const PersonCard = (props) => (
-    <div className="mx-8 group flex flex-col items-center cursor-pointer relative">
+    <div className="px-10 group flex flex-col items-center cursor-pointer relative">
         {/* Image Container with Overlay */}
         <div className="relative w-[180px] h-[180px] rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl isolate">
             {/* Image (z-0 to ensure it stays in back) */}
@@ -31,13 +31,10 @@ const PersonCard = (props) => (
 const PeopleInspiration = () => {
     return (
         <>
-            <div className="text-center mb-12 mt-16 ">
+            <div className="text-center py-16 ">
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-                    People That <span className="text-gradient">Inspire Me</span>
+                    People That <span className="text-gradient">Inspire</span> Me
                 </h3>
-                <p className="text-gray-600 max-w-2xl mx-auto">
-                    These people have impacted my values, beliefs and aspirations.
-                </p>
             </div>
             <Marquee pauseOnHover={true} gradient={true} gradientWidth={50} className="mb-16">
                 {People.map(person => (

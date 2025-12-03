@@ -10,12 +10,13 @@ interface ImageBannerProps {
     bannerCaption?: string;
     topBlend?: boolean;
     bottomBlend?: boolean;
-    blendHeight?: string;
+    topBlendHeight?: string;
+    bottomBlendHeight?: string;
 }
 
 const ImageBanner: React.FC<ImageBannerProps> = (props) => {
-    const blendHeight = props.blendHeight || '100px';
-
+    const topBlendHeight = props.topBlendHeight || '100px';
+    const bottomBlendHeight = props.bottomBlendHeight || '100px';
     return (
         <div className="relative w-full animate-slide-up" style={{ height: props.bannerHeight }}>
 
@@ -37,7 +38,7 @@ const ImageBanner: React.FC<ImageBannerProps> = (props) => {
                 {props.topBlend && (
                     <div
                         className="absolute top-0 left-0 right-0 bg-gradient-to-b from-slate-50 to-transparent pointer-events-none z-10"
-                        style={{ height: blendHeight }}
+                        style={{ height: topBlendHeight }}
                     />
                 )}
 
@@ -45,7 +46,7 @@ const ImageBanner: React.FC<ImageBannerProps> = (props) => {
                 {props.bottomBlend && (
                     <div
                         className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none z-10"
-                        style={{ height: blendHeight }}
+                        style={{ height: bottomBlendHeight }}
                     />
                 )}
             </div>

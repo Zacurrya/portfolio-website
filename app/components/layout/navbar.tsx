@@ -2,7 +2,7 @@ import WaveDivider from "../ui/wave-divider";
 import SocialIcons from "../ui/social-icons";
 import Link from 'next/link';
 
-const Navbar = () => {
+function Navbar() {
     // Define navigation links
     const navLinks = [
         { name: 'About', href: '#about' },
@@ -14,13 +14,13 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 right-0 z-40 bg-[#004C9C] backdrop-blur-sm">
             <div className="container h-14 mx-auto px-6 py-4 relative">
                 {/* Logo */}
-                <Link href="/" className="">
+                <a href="#home" className="">
                     <img
                         src="/navbar-logo.svg"
                         alt="Zaky Yusuf"
                         className="absolute top-3 left-5 z-50 h-10 w-auto object-contain"
                     />
-                </Link>
+                </a>
 
                 {/* Navigation and Social Icons - Right aligned */}
                 <div className="absolute right-6 top-1/2 transform -translate-y-1/2 flex items-center gap-8">

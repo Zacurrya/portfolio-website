@@ -12,21 +12,26 @@ const HobbiesMarquee = () => {
                     My interests and hobbies outside of software development.
                 </p>
             </div>
-            <Marquee pauseOnHover={true} gradient={true} gradientWidth={50}>
-                {hobbies.map((hobby, idx) => (
-                    <div
-                        key={idx}
-                        className="flex flex-col items-center justify-center mx-8 min-w-[100px] cursor-default"
-                    >
-                        <div className="text-4xl mb-3">
-                            {hobby.emoji}
+
+            {/* Full-viewport width marquee. The inner wrapper recenters the marquee visually while
+                allowing it to span the full screen width regardless of parent container. */}
+            <div className="w-screen relative left-1/2 right-1/2 -translate-x-1/2">
+                <Marquee pauseOnHover={false} gradient={true} gradientWidth={50}>
+                    {hobbies.map((hobby, idx) => (
+                        <div
+                            key={idx}
+                            className="flex flex-col items-center justify-center mx-8 min-w-[100px] cursor-default"
+                        >
+                            <div className="text-4xl mb-3">
+                                {hobby.emoji}
+                            </div>
+                            <div className="text-sm font-medium text-gray-500 whitespace-nowrap">
+                                {hobby.name}
+                            </div>
                         </div>
-                        <div className="text-sm font-medium text-gray-500 whitespace-nowrap">
-                            {hobby.name}
-                        </div>
-                    </div>
-                ))}
-            </Marquee>
+                    ))}
+                </Marquee>
+            </div>
         </div>
     );
 };

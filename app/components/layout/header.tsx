@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import WaveDivider from '../ui/wave-divider';
 import SocialIcons from '../ui/social-icons';
+import TextHoverEffect from '../ui/shadcn-io/text-hover-effect';
 
 const Header = () => {
     return (
-        <nav className="absolute top-0 left-0 right-0 z-51 bg-[#004C9C]">
+        <nav id="home" className="snap-section absolute top-0 left-0 right-0 z-51 bg-[#004C9C]">
             <div className="container mx-auto px-6 pt-4">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
@@ -16,9 +17,30 @@ const Header = () => {
                         />
                     </Link>
 
-                    {/* Right Side: Socials & Email */}
-                    <div className="absolute top-6 right-6">
-                        <div className="hidden sm:flex">
+                    {/* Right Side: Navigation & Socials */}
+                    <div className="absolute right-6 top-1/2 transform -translate-y-1/2">
+                        <div className="hidden sm:flex items-center gap-8">
+                            {/* Navigation Links */}
+                            <div className="flex items-center gap-8">
+                                {[
+                                    { name: 'About', href: '#about' },
+                                    { name: 'Projects', href: '#projects' },
+                                    { name: 'Contact', href: '#contact' },
+                                ].map((link) => (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        className="text-white text-lg font-semibold transition-colors"
+                                    >
+                                        <TextHoverEffect>{link.name}</TextHoverEffect>
+                                    </a>
+                                ))}
+                            </div>
+
+                            {/* Divider (same style as in navbar) */}
+                            <div className="h-6 w-px bg-white/30"></div>
+
+                            {/* Social Icons */}
                             <SocialIcons iconSize="w-8 h-8" />
                         </div>
                     </div>
