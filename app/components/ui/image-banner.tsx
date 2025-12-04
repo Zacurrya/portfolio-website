@@ -4,7 +4,15 @@ import Image from 'next/image';
 interface ImageBannerProps {
     imageSrc: string;
     sameLine?: boolean;
-    bannerHeight: string;
+    /**
+     * Maximum banner height (e.g. '700px'). Used as the upper bound for responsive sizing.
+     */
+    bannerHeight?: string;
+    /**
+     * Preferred height in viewport width units. Example: 50 means 50vw.
+     * The final height will use CSS clamp(min, preferred vw, max bannerHeight).
+     */
+    bannerHeightVW?: number;
     bannerTitle?: string;
     bannerHighlight?: string;
     bannerCaption?: string;
@@ -17,8 +25,17 @@ interface ImageBannerProps {
 const ImageBanner: React.FC<ImageBannerProps> = (props) => {
     const topBlendHeight = props.topBlendHeight || '100px';
     const bottomBlendHeight = props.bottomBlendHeight || '100px';
+
+    // Determine responsive height: prefer a vw-based height, but clamp it between a min and
+    // the provided bannerHeight (if any). This makes banner heights scale with viewport width
+    // while respecting an explicit pixel max for large screens.
+    const minHeight = '280px';
+    const preferredVW = typeof props.bannerHeightVW === 'number' ? `${props.bannerHeightVW}vw` : '50vw';
+    const maxHeight = props.bannerHeight || '900px';
+    const heightStyle = `clamp(${minHeight}, ${preferredVW}, ${maxHeight})`;
+
     return (
-        <div className="relative w-full animate-slide-up" style={{ height: props.bannerHeight }}>
+        <div className="relative w-full animate-slide-up" style={{ height: heightStyle }}>
 
             {/* 1. Background Image Container */}
             <div className="absolute inset-0 w-full h-full overflow-hidden">
@@ -56,22 +73,20 @@ const ImageBanner: React.FC<ImageBannerProps> = (props) => {
             <div className="absolute inset-0 flex flex-col items-center justify-center z-20 text-center px-4">
 
                 {props.bannerCaption && (
-                    <p className="text-blue-400 text-lg font-bold mb-4 tracking-wide uppercase drop-shadow-md">
+                    <p className="text-blue-300 text-sm sm:text-base md:text-lg font-semibold mb-3 tracking-wide uppercase drop-shadow-md">
                         {props.bannerCaption}
                     </p>
                 )}
 
                 {props.bannerTitle && (
-                    <h1 className="text-white text-5xl md:text-6xl font-bold leading-tight drop-shadow-lg">
-                        {props.bannerTitle}
+                    <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-[0_6px_18px_rgba(0,0,0,0.6)] max-w-[90%] md:max-w-3xl">
+                        <span className="block">
+                            {props.bannerTitle}
+                        </span>
                         {props.bannerHighlight && (
-                            <>
-                                {props.sameLine ? null : <br />}
-                                {/* Inline gradient styles to ensure it works without external CSS */}
-                                <span className="text-gradient">
-                                    {props.bannerHighlight}
-                                </span>
-                            </>
+                            <span className="mt-2 inline-block text-gradient bg-white/0 px-1 md:px-2">
+                                {props.bannerHighlight}
+                            </span>
                         )}
                     </h1>
                 )}

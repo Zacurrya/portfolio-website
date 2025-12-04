@@ -13,19 +13,25 @@
   --border: #e5e7eb;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+/* 1. Parent Class (Container) */
+.snap-parent {
+  /* Use Tailwind for the standard classes */
+  @apply snap-y snap-proximity; 
 }
 
-
+/* 2. Child Class (Sections to Snap To) */
 .snap-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  /* Use Tailwind for the standard snap-align class */
+  @apply snap-start;
+  
+  /* Use the raw CSS property for the custom/non-utility feature
+     We cannot use @apply here for snap-always because it's not a native utility. */
+  scroll-snap-stop: always; 
 }
 
 html,
 body {
+  scroll-behavior: smooth;
   height: 100%;
   background-color: var(--background);
   color: var(--foreground);
