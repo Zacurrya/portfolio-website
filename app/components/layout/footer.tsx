@@ -3,13 +3,12 @@ import EmailForm from '../ui/email-form';
 
 const Footer = () => {
     return (
-        <footer id="contact" className="mt-32 relative">
-            {/* Wave Top */}
-            <div className="absolute top-0 left-0 right-0 transform -translate-y-full text-[#004C9C]">
-                <WaveDivider position="top" />
-            </div>
-
+        <footer id="contact" className="relative">
             <div className="bg-gradient-to-b from-[#004C9C] to-[#002d5c] pt-8 pb-16 text-white">
+                {/* Wave Top */}
+                <div className="absolute top-0 left-0 right-0 transform -translate-y-full text-[#004C9C]">
+                    <WaveDivider position="top" />
+                </div>
                 <div className="container mx-auto px-6 max-w-6xl">
                     {/* Header */}
                     <div className="text-center mb-16">

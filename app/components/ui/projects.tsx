@@ -19,7 +19,7 @@ const Projects = () => {
     const displayed = isMobile ? projects.slice(0, 3) : projects;
 
     return (
-        <section id="projects" className="pt-24 pb-52 px-6 bg-gradient-to-b from-white to-blue-50">
+        <section id="projects" className="pt-24 pb-[50%] px-6 bg-gradient-to-b from-white to-blue-50">
             <div className="container mx-auto max-w-6xl">
                 <h2 className="text-3xl font-bold mb-12 text-center">
                     <span className="text-gradient">Featured</span> Projects

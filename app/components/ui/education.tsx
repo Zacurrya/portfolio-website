@@ -1,3 +1,4 @@
+"use client";
 import { education } from '../../lib/data/education';
 
 const Education = () => {

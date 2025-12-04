@@ -13,8 +13,8 @@ export const content = {
             highlight: "Code"
         },
         paragraphs: ["Hi, I'm Zaky, a Computer Science student with a dream to positively impact people's lives through technology.",
-            "Ever since I studied abroad and working with and making friends with people from around the world, I've wanted to work in a global company where I can continue to grow as a person and as a developer.",
-            "I’m always building something. Whether it's an API, a full-stack website, or an interactive GUI. I'm now looking for an internship where I can apply that same builder's mindset to large-scale projects with global reach."],
+            "I recently studied abroad and worked with and made friends with people from around the world. Since then, I've wanted to work in a global company where I can continue to grow as a person and as a developer.",
+            "I’m always building something new. Whether it's an API, a full-stack website, or an interactive GUI. I'm now looking for an internship where I can apply that same builder's mindset to large-scale projects with global reach."],
         drives: {
             title: "What drives me?",
             items: [

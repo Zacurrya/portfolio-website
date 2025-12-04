@@ -6,14 +6,14 @@ import TextHoverEffect from '../ui/shadcn-io/text-hover-effect';
 const Header = () => {
     return (
         <nav id="home" className="snap-section absolute top-0 left-0 right-0 z-51 bg-[#004C9C]">
-            <div className="container mx-auto px-6">
+            <div className="container">
                 <div className="flex pt-2 items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="z-100 hover:opacity-90 transition-opacity block flex-shrink-0">
                         <img
                             src="/header-logo.svg"
                             alt="Zaky Yusuf"
-                            className="h-12 sm:h-20 w-auto object-contain"
+                            className="h-12 pl-2 sm:h-16 sm:pl-3.5 w-auto object-contain"
                         />
                     </Link>
 
@@ -53,7 +53,7 @@ const Header = () => {
 
             {/* Wave Bottom */}
             <div className="text-[#004C9C] absolute top-17 z-50 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
-                <WaveDivider position="bottom" />
+                <WaveDivider position="bottom" height={40} />
             </div>
         </nav>
     );

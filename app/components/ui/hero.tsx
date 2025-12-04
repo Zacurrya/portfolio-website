@@ -4,7 +4,7 @@ import ChevronDown from './chevron-down';
 
 const Hero = () => {
     return (
-        <section className="snap-section min-h-[40vh] flex flex-col items-center text-center pt-10 pb-20">
+        <section className="snap-section min-h-screen md:min-h-[40vh] flex flex-col items-center text-center pt-10 pb-20">
             <ImageBanner
                 bottomBlend={true}
                 bottomBlendHeight="50px"
@@ -32,7 +32,7 @@ const Hero = () => {
             </div>
 
             {/* See more button (hidden on small screens) */}
-            <div className="hidden sm:block mt-[30%] mb-10">
+            <div className="hidden sm:block  mt-[30%] mb-10">
                 <ChevronDown href="about" color="text-[#004C9C]" />
             </div>
         </section>
