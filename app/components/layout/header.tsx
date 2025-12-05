@@ -5,8 +5,8 @@ import TextHoverEffect from '../ui/shadcn-io/text-hover-effect';
 
 const Header = () => {
     return (
-        <nav id="home" className="snap-section absolute top-0 left-0 right-0 z-51 bg-[#004C9C]">
-            <div className="container">
+        <header id="home" className="snap-section absolute top-0 left-0 right-0 z-51 bg-[#004C9C]">
+            <div>
                 <div className="flex pt-2 items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="z-100 hover:opacity-90 transition-opacity block flex-shrink-0">
@@ -55,7 +55,7 @@ const Header = () => {
             <div className="text-[#004C9C] absolute top-17 z-50 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
                 <WaveDivider position="bottom" height={40} />
             </div>
-        </nav>
+        </header>
     );
 };
 

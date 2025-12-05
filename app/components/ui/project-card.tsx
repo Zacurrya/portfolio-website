@@ -40,7 +40,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
                 {/* Wave Divider - Overlaying image and content */}
                 <div className="absolute bottom-0 left-0 right-0 text-[#004C9C] z-10" style={{ transform: 'translateY(33%)' }}>
-                    <WaveDivider position="top" />
+                    <WaveDivider position="top" height={23} reverse={true} />
                 </div>
             </div>
 

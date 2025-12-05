@@ -19,9 +19,14 @@ function Navbar() {
                 {/* Logo */}
                 <a href="#home">
                     <img
-                        src="/navbar-logo.svg"
+                        src="/header-logo.svg"
                         alt="Zaky Yusuf"
-                        className="absolute left-3 top-2 md:top-6 md:h-10 lg:top-2 lg:h-16 z-60 h-9 w-auto object-contain"
+                        className="absolute z-60 w-auto object-contain
+                        left-2 h-10
+                        sm:left-2 top-1 sm:h-10
+                        md:top-3 md:h-12 
+                        lg:top-2 lg:h-[4.5vh] 
+                        "
                     />
                 </a>
 
@@ -40,7 +45,7 @@ function Navbar() {
                         ))}
 
                         <div className="h-6 w-px bg-white/30" />
-                        <SocialIcons iconSize="w-6 h-6" />
+                        <SocialIcons iconSize="w-6 h-6" emailIconSize="w-7 h-7" />
                     </div>
 
                     {/* Mobile hamburger */}

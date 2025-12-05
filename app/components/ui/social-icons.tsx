@@ -1,9 +1,10 @@
 interface SocialIconsProps {
     iconSize?: string;
+    emailIconSize?: string;
     showEmail?: boolean;
 }
 
-const SocialIcons: React.FC<SocialIconsProps> = ({ iconSize = "w-6 h-6", showEmail = true }) => {
+const SocialIcons: React.FC<SocialIconsProps> = ({ iconSize = "w-6 h-6", emailIconSize= "w-8 h-8", showEmail = true }) => {
     return (
         <div className="flex items-center gap-6">
             {/* GitHub Icon - Simple outline */}
@@ -27,7 +28,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ iconSize = "w-6 h-6", showEma
                 className="text-white hover:text-blue-200 transition-colors"
                 aria-label="LinkedIn"
             >
-                <svg className={iconSize} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                <svg className={iconSize} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
                     <circle cx="4" cy="4" r="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -40,7 +41,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ iconSize = "w-6 h-6", showEma
                     className="text-white hover:text-blue-200 transition-colors"
                     aria-label="Email"
                 >
-                    <svg className={iconSize} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <svg className={emailIconSize} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.7">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                 </a>
