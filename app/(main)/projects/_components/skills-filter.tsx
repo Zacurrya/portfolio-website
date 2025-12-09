@@ -47,8 +47,8 @@ const SkillsFilter = ({ allTags, tagCounts, onFilterChange }: SkillsFilterProps)
                             className={`
                             px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200
                             ${selectedTags.includes(tag)
-                                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md scale-105'
-                                    : 'bg-blue-900/70 text-blue-50 hover:bg-blue-800/80 hover:scale-105'
+                                    ? 'bg-gradient-to-r from-[#004e9C] to-[#004e9C] text-white shadow-md scale-105'
+                                    : 'bg-[#004e9C]/70 text-blue-50 hover:bg-[#004e9C]/80 hover:scale-105'
                                 }
                         `}
                         >

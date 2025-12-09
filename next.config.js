@@ -5,9 +5,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'skillicons.dev',
+        hostname: 'cdn.jsdelivr.net',
         port: '',
-        pathname: '/**',
+        pathname: '/gh/devicons/devicon/**',
       },
     ],
     // Allow serving and optimization of SVGs from remote sources.

@@ -7,15 +7,28 @@ const Hero = () => {
         <section className="sm:min-h-[70vh] md:min-h-screen lg:min-h-screen pt-10 snap-section max-h-screen flex flex-col items-center text-center overflow-hidden">
             <div className="w-full">
                 <ImageBanner bottomBlend={true} bottomBlendHeight="50px" imageSrc="/pics/me-at-canary-wharf.jpg" height={55}>
-                    <p className="text-blue-300 text-sm sm:text-base md:text-lg font-semibold mb-3 tracking-wide uppercase drop-shadow-md">
+                    {/* Subtitle */}
+                    <p className="no-interact-text text-blue-200/90 text-xs sm:text-sm md:text-base font-semibold mb-4 tracking-[0.2em] uppercase drop-shadow-lg">
                         Full Stack Developer
                     </p>
-                    <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-[0_6px_18px_rgba(0,0,0,0.6)] max-w-[90%] md:max-w-3xl">
-                        Zakariya Yusuf
-                        <span className="mt-2 inline-block text-gradient text-hover-glow bg-white/0 px-1 md:px-2">
-                            Portfolio
-                        </span>
+
+                    {/* Main Title */}
+                    <h1 className="no-interact-text text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight drop-shadow-[0_8px_24px_rgba(0,0,0,0.8)] mb-4">
+                        Zaky Yusuf
                     </h1>
+
+                    {/* Tagline */}
+                    <h2 className="no-interact-text max-w-[85%] sm:max-w-[70%] md:max-w-2xl mx-auto text-white/90 text-sm sm:text-base md:text-xl font-normal leading-relaxed drop-shadow-lg mb-4">
+                        Building software to solve real issues and benefit society
+                    </h2>
+
+                    {/* Location */}
+                    <p className="no-interact-text text-white/80 text-xs sm:text-sm md:text-base font-medium flex items-center justify-center gap-2 drop-shadow-lg">
+                        <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                        </svg>
+                        London
+                    </p>
                 </ImageBanner>
             </div>
             {/* Call to Action Buttons (hidden on phone) */}

@@ -28,6 +28,60 @@ export const techIcons: { [key: string]: string } = {
 };
 
 /**
+ * Mapping of skill icon names to Devicons names
+ * Devicons CDN: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{name}/{name}-{version}.svg
+ */
+export const deviconMapping: { [key: string]: string } = {
+    // Languages
+    "javascript": "javascript",
+    "js": "javascript",
+    "typescript": "typescript",
+    "python": "python",
+    "java": "java",
+    "cs": "csharp",
+
+    // Frameworks & Libraries
+    "react": "react",
+    "nextjs": "nextjs",
+    "express": "express",
+    "fastapi": "fastapi",
+    "pytorch": "pytorch",
+    "unity": "unity",
+    "nodejs": "nodejs",
+    "streamlit": "streamlit",
+
+    // Databases
+    "postgresql": "postgresql",
+    "postgres": "postgresql",
+    "mysql": "mysql",
+    "prisma": "prisma",
+
+    // Tools
+    "docker": "docker",
+    "git": "git",
+    "vercel": "vercel",
+    "maven": "maven",
+    "figma": "figma",
+    "selenium": "selenium",
+    "postman": "postman",
+
+    // Styling
+    "tailwind": "tailwindcss",
+    "opencv": "opencv",
+};
+
+/**
+ * Gets the Devicon CDN URL for a given skill icon
+ * @param iconName - The icon name (e.g., "javascript", "react")
+ * @param version - The icon version (default: "original")
+ * @returns The CDN URL for the icon
+ */
+export const getIconUrl = (iconName: string, version: string = "original"): string => {
+    const deviconName = deviconMapping[iconName.toLowerCase()] || iconName.toLowerCase();
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${deviconName}/${deviconName}-${version}.svg`;
+};
+
+/**
  * Dictionary mapping skill icon names to their proper display names
  */
 export const skillDisplayNames: { [key: string]: string } = {
@@ -46,6 +100,7 @@ export const skillDisplayNames: { [key: string]: string } = {
     "fastapi": "FastAPI",
     "pytorch": "PyTorch",
     "unity": "Unity",
+    "streamlit": "Streamlit",
 
     // Databases & Tools
     "postgresql": "PostgreSQL",

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { getSkillDisplayName } from '../../../lib/tech-icons';
+import { getSkillDisplayName, getIconUrl } from '../../../lib/tech-icons';
 
 type Props = {
     title?: string;
@@ -15,7 +15,7 @@ const SkillGroup: React.FC<Props> = ({ title, skills }) => {
                 {skills.map((skill) => (
                     <div key={skill} className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-3 py-2 rounded-md shadow-sm">
                         <Image
-                            src={`https://skillicons.dev/icons?i=${skill}&theme=light`}
+                            src={getIconUrl(skill)}
                             alt={skill}
                             width={26}
                             height={26}

@@ -59,7 +59,7 @@ const Projects = () => {
     const displayed = filteredProjects;
 
     return (
-        <section id="projects" className="pt-5 pb-20 px-6 bg-gradient-to-b from-white to-blue-50">
+        <section id="projects" className="pt-5 pb-60 px-6 bg-gradient-to-b from-white to-blue-50">
             <Banner />
             <div className="container mx-auto max-w-6xl pt-10">
                 {/* Skills Filter */}

@@ -4,7 +4,6 @@ import Skills from '../skills/skills';
 import HobbiesMarquee from '../hobbies/hobbiesMarquee';
 import ChevronDown from '../../components/ui/chevron-down';
 import DrivesCard from './_components/drivesCard';
-import ImageCredits from '../../components/ui/imageCredits';
 import Banner from './_components/banner';
 
 const About = () => {
@@ -13,7 +12,6 @@ const About = () => {
             {/* Top Banner - Hidden on mobile xs */}
             <div className="hidden sm:block">
                 <Banner />
-                <ImageCredits credits="Taken by Yun Xu" />
             </div>
 
             {/* Narrative Section */}

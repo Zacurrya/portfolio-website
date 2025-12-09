@@ -60,12 +60,14 @@ const ImageBanner: React.FC<ImageBannerProps> = (props) => {
                 )}
 
                 {/* Bottom blend gradient */}
-                {props.bottomBlend && (
-                    <div
-                        className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white to-transparent pointer-events-none z-10"
-                        style={{ height: bottomBlendHeight }}
-                    />
-                )}
+                {
+                    props.bottomBlend && (
+                        <div
+                            className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white to-transparent pointer-events-none z-10"
+                            style={{ height: bottomBlendHeight }}
+                        />
+                    )
+                }
             </div>
 
             {/* 2. Content Container - Flexbox Centering */}

@@ -1,5 +1,5 @@
 import WaveDivider from '../../../components/ui/wave-divider';
-import { groupTagsByIcon } from '../../../lib/tech-icons';
+import { groupTagsByIcon, getIconUrl } from '../../../lib/tech-icons';
 import Image from 'next/image';
 
 interface ProjectCardProps {
@@ -20,19 +20,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#004C9F] rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-2xl overflow-hidden group flex flex-col h-full relative"
+            className="bg-[#004C9F] rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-2xl group flex flex-col h-full relative"
         >
-            {/* Image Container */}
-            <div className="h-64 lg:h-72 overflow-hidden relative">
-                <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                />
-                {/* Stronger gradient for better title visibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            {/* Image Container - overflow-visible to allow tooltips to show */}
+            <div className="h-64 lg:h-72 relative">
+                <div className="absolute inset-0 overflow-hidden rounded-t-2xl">
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                    />
+                    {/* Stronger gradient for better title visibility */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                </div>
 
-                {/* Content overlay - Title and Icons with justify-between */}
+                {/* Content overlay - Title and Icons */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 z-20 flex flex-col justify-between h-full">
                     {/* Spacer to push content to bottom */}
                     <div className="flex-grow" />
@@ -51,11 +53,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                                     <Image
                                         width={28}
                                         height={28}
-                                        src={`https://skillicons.dev/icons?i=${icon}&theme=light`}
+                                        src={getIconUrl(icon)}
                                         alt={tags.join(", ")}
                                         className="hover:scale-110 transition-transform rounded"
                                     />
-                                    <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black/80 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover/icon:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+                                    {/* Tooltip - positioned above with high z-index to appear on blue background */}
+                                    <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black/80 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover/icon:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
                                         {tags.join(", ")}
                                     </span>
                                 </div>
@@ -70,7 +73,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 </div>
             </div>
 
-            {/* Content - Reduced padding since we removed icons */}
+            {/* Content - Blue section */}
             <div className="px-4 lg:px-5 pt-4 lg:pt-5 pb-4 lg:pb-5 flex flex-col flex-grow">
                 {/* Description */}
                 <p className="text-white leading-relaxed text-sm lg:text-base">

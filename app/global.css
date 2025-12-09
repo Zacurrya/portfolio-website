@@ -16,17 +16,17 @@
 /* 1. Parent Class (Container) */
 .snap-parent {
   /* Use Tailwind for the standard classes */
-  @apply snap-y snap-proximity; 
+  @apply snap-y snap-proximity;
 }
 
 /* 2. Child Class (Sections to Snap To) */
 .snap-section {
   /* Use Tailwind for the standard snap-align class */
   @apply snap-start;
-  
+
   /* Use the raw CSS property for the custom/non-utility feature
      We cannot use @apply here for snap-always because it's not a native utility. */
-  scroll-snap-stop: always; 
+  scroll-snap-stop: always;
 }
 
 html,
@@ -48,6 +48,12 @@ body {
 }
 
 /* Custom Utilities */
+.no-interact-text {
+  cursor: default;
+  user-select: none;
+}
+
+
 .glass-panel {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
@@ -114,13 +120,13 @@ body {
    a smooth glowing effect on hover/focus. */
 .text-hover-glow {
   /* longer transition so glow fades out gently */
-  transition: text-shadow 700ms cubic-bezier(.22,.9,.32,1), filter 700ms cubic-bezier(.22,.9,.32,1);
+  transition: text-shadow 700ms cubic-bezier(.22, .9, .32, 1), filter 700ms cubic-bezier(.22, .9, .32, 1);
   will-change: text-shadow, filter;
 }
 
 /* Soft glow on hover/focus. Rely on transition for smooth fade-in/out. */
 .text-hover-glow:hover,
 .text-hover-glow:focus {
-  text-shadow: 0 0 8px rgba(88,121,255,0.65), 0 0 18px rgba(59,130,246,0.4);
-  filter: drop-shadow(0 6px 14px rgba(59,130,246,0.12));
+  text-shadow: 0 0 8px rgba(88, 121, 255, 0.65), 0 0 18px rgba(59, 130, 246, 0.4);
+  filter: drop-shadow(0 6px 14px rgba(59, 130, 246, 0.12));
 }
