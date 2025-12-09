@@ -1,16 +1,20 @@
 import Navbar from './components/layout/navbar'
 import Footer from './components/layout/footer'
-import Hero from './components/ui/hero'
-import Projects from './components/ui/projects'
-import About from './components/ui/about'
+import Hero from './(main)/hero/_components/hero'
+import Projects from './(main)/projects/projects'
+import About from './(main)/about/about'
+
+export const metadata = {
+  title: "Zaky's Portfolio",
+  description: "Zakariya Yusuf's Portfolio Website",
+  icons: {
+    icon: '/navbar-logo.svg'
+  },
+};
 
 export default function Page() {
   return (
     <>
-      <head>
-        <link rel="icon" href="/navbar-logo.svg" />
-        <title>Zaky's Portfolio</title>
-      </head>
       <Navbar />
       {/* Section 1 */}
       <div className="snap-parent">

@@ -1,0 +1,28 @@
+const DrivesCard = ({ Content }) => {
+    return (
+        <>
+            {/* Glow/Blur Effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+            {/* Glass Panel Content */}
+            <div className="relative h-full glass-panel p-6 md:p-8 rounded-2xl border border-white/60 bg-white/60 shadow-xl backdrop-blur-md">
+                <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-gray-900 tracking-tight">
+                    What drives me?
+                </h3>
+                <ul className="space-y-3 md:space-y-4">
+                    {Content.about.drives.items.map((item: any, index: number) => (
+                        <li key={index} className="flex items-start gap-3 md:gap-4">
+                            <div className="shrink-0 text-blue-600 mt-1 p-1 bg-blue-50 rounded-md">
+                                {item.icon}
+                            </div>
+                            <span className="text-gray-700 text-sm md:text-base font-medium leading-snug">
+                                {item.text}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </>
+    )
+}
+
+export default DrivesCard;

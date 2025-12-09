@@ -1,5 +1,5 @@
 import WaveDivider from '../ui/wave-divider';
-import EmailForm from '../ui/email-form';
+import EmailForm from '../../(main)/contactForm/_components/email-form';
 
 const Footer = () => {
     return (

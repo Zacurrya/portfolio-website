@@ -1,5 +1,5 @@
 import Marquee from "react-fast-marquee";
-import hobbies from "../../lib/data/hobbies";
+import hobbies from "@/app/(main)/hobbies/_contexts/hobbies";
 
 const HobbiesMarquee = () => {
     return (

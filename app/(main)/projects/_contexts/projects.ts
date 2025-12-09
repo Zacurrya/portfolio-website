@@ -8,7 +8,7 @@ export const projects = [
     },
     {
         title: "NutriVise",
-        description: "AI-powered app using PyTorch and ResNet-50 to analyze food photos and provide nutritional data, supporting UN Sustainable Development Goals. Made with an international team as part of my exchange programme.",
+        description: "AI-powered nutritional analysis app built to support UN sustainable goals. Model trained off of ResNet-50 using PyTorch. Made with an international team as part of my exchange programme.",
         tags: ["PyTorch", "OpenCV", "ResNet-50"],
         link: "https://github.com/Zacurrya/nutrivise",
         image: "./project-images/nutrivise.png"
