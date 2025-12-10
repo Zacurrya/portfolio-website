@@ -48,7 +48,7 @@ const Projects = () => {
     const displayed = filteredProjects;
 
     return (
-        <section id="projects" className="pb-60 bg-gradient-to-b from-white to-blue-50">
+        <section id="projects" className="snap-section pb-60 bg-gradient-to-b from-white to-blue-50">
             <Banner>
                 {/* Skills Filter */}
                 <SkillsFilter

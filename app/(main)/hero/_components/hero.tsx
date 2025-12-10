@@ -4,7 +4,7 @@ import ChevronDown from '../../../components/ui/chevron-down';
 
 const Hero = () => {
     return (
-        <section className="min-h-screen snap-section flex flex-col items-center overflow-hidden">
+        <section className="sm:min-h-screen snap-section flex flex-col items-center overflow-hidden">
             <div className="w-full">
                 <ImageBanner
                     bottomBlend={true}
@@ -45,7 +45,7 @@ const Hero = () => {
             </div>
 
             {/* Buttons - Outside Banner for split layout */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 mt-12 sm:mt-16 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <div className="flex text-xs sm:text-[1rem] md:text-md lg:text-lg flex-row items-center gap-4 mt-12 sm:mt-16 animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 <Link
                     href="#projects"
                     className="w-full sm:w-auto px-10 py-3.5 bg-[#004C9C] text-white font-semibold rounded-full hover:bg-[#003a7a] hover:scale-105 transition-all shadow-lg hover:-translate-y-1 text-center min-w-[160px]"

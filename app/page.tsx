@@ -21,7 +21,7 @@ export default function Page() {
       {/* Section 1 */}
       <div className="snap-parent">
         <Hero />
-        <main className="min-h-screen relative overflow-hidden">
+        <main className="min-h-screen relative">
           {/* Section 2 */}
           <About />
           {/* Section 3 */}

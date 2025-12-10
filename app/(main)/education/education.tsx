@@ -5,7 +5,7 @@ import { education } from '@/app/(main)/education/_contexts/education';
 
 const Education = () => {
     return (
-        <div id="education" className="mb-60 px-4 md:px-6 max-w-6xl mx-auto">
+        <div id="education" className="px-4 md:px-6 max-w-6xl mx-auto">
             <div className="relative group">
                 {/* Glow/Blur Effect - Blue tones to match Education gradient */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-200 to-indigo-300 rounded-2xl blur opacity-15 group-hover:opacity-30 transition duration-1000 group-hover:duration-200" />

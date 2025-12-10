@@ -23,15 +23,12 @@
 .snap-section {
   /* Use Tailwind for the standard snap-align class */
   @apply snap-start;
-
-  /* Use the raw CSS property for the custom/non-utility feature
-     We cannot use @apply here for snap-always because it's not a native utility. */
-  scroll-snap-stop: always;
 }
 
 html,
 body {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
   height: 100%;
   background-color: var(--background);
   color: var(--foreground);

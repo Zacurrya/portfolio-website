@@ -8,7 +8,7 @@ import Banner from './_components/banner';
 
 const About = () => {
     return (
-        <section id="about" className="relative overflow-hidden bg-gradient-to-b from-white via-blue-100 to-white">
+        <section id="about" className="snap-section relative overflow-hidden bg-gradient-to-b from-white via-blue-100 to-white">
             {/* Top Banner - Hidden on mobile xs */}
             <div className="hidden sm:block">
                 <Banner />
@@ -31,12 +31,12 @@ const About = () => {
                     <DrivesCard Content={Content} />
                 </div>
             </div>
-
-            {/* Skills Section */}
-            <Skills />
-            {/* Education Section */}
-            <Education />
-
+            <div className="snap-section mb-32 mt-20">
+                {/* Skills Section */}
+                <Skills />
+                {/* Education Section */}
+                <Education />
+            </div>
             {/*<div className="pt-12 pb-8 md:pt-20 md:pb-16 col-span-1 md:col-span-2 flex items-center justify-center w-full overflow-hidden"><HobbiesMarquee /></div>*/}
         </section >
     );
