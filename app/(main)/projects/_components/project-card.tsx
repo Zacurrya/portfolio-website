@@ -1,5 +1,5 @@
 import WaveDivider from '../../../components/ui/wave-divider';
-import { groupTagsByIcon, getIconUrl } from '../../../lib/tech-icons';
+import { groupTagsByIcon, getIconUrl } from '@/app/lib/skills-config';
 import Image from 'next/image';
 
 interface ProjectCardProps {

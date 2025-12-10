@@ -5,7 +5,7 @@ export const education = [
         image: "/qmul-building.jpg",
         year: "Exp. May 2027",
         degree: "BSc, Computer Science",
-        details: "Learned OOP, Data Structures & Algorithms, Systems Design, Software Engineering, Database Systems"
+        details: "Learned a range of modules including: Object-Oriented Programming (OOP), Data Structures & Algorithms, Systems Design, Software Engineering and Database Systems. Building a strong foundation of a breadth of areas."
     },
     {
         name: "Nanyang Technological University",

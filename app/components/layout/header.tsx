@@ -5,7 +5,7 @@ import TextHoverEffect from '../ui/shadcn-io/text-hover-effect';
 
 const Header = () => {
     return (
-        <header id="home" className="snap-section absolute top-0 left-0 right-0 z-51 bg-[#004C9C]">
+        <header id="home" className="snap-section absolute top-0 left-0 right-0 z-50 bg-[#004C9C]">
             <div>
                 <div className="flex pt-2 items-center justify-between">
                     {/* Logo */}

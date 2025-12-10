@@ -2,7 +2,7 @@ export const projects = [
     {
         title: "Nomad Housing",
         description: "Full-stack property platform with Next.js, Prisma, and PostgreSQL. Features a Python microservice for real-time data and an LLM for natural language search.",
-        tags: ["Next.js", "Prisma", "PostgreSQL", "FastAPI"],
+        tags: ["Next.js", "Prisma", "PostgreSQL", "FastAPI", "Selenium"],
         link: "https://github.com/Zacurrya/nomad-housing",
         image: "./project-images/nomad.png"
     },

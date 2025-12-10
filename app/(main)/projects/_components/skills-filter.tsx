@@ -1,15 +1,14 @@
 "use client";
 
 import { useState } from 'react';
-import { skillNames } from '../_contexts/skillNames';
+import { skillDisplayNames } from '@/app/lib/skills-config';
 
 type SkillsFilterProps = {
     allTags: string[];
-    tagCounts: Record<string, number>;
     onFilterChange: (selectedTags: string[]) => void;
 };
 
-const SkillsFilter = ({ allTags, tagCounts, onFilterChange }: SkillsFilterProps) => {
+const SkillsFilter = ({ allTags, onFilterChange }: SkillsFilterProps) => {
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
     const handleTagClick = (tag: string) => {
@@ -21,38 +20,28 @@ const SkillsFilter = ({ allTags, tagCounts, onFilterChange }: SkillsFilterProps)
         onFilterChange(newSelectedTags);
     };
 
-    const handleClear = () => {
-        setSelectedTags([]);
-        onFilterChange([]);
-    };
-
-    const handleAll = () => {
-        setSelectedTags([]);
-        onFilterChange([]);
-    };
-
     // Get display name from dictionary or fallback to original
     const getDisplayName = (tag: string) => {
-        return skillNames[tag.toLowerCase()] || tag;
+        return skillDisplayNames[tag.toLowerCase()] || tag;
     };
 
     return (
-        <div className="mb-8 flex justify-center">
-            <div className="max-w-3xl">
+        <div className="w-full flex justify-center">
+            <div className="max-w-4xl p-2">
                 <div className="flex flex-wrap gap-2 items-center justify-center">
                     {allTags.map((tag) => (
                         <button
                             key={tag}
                             onClick={() => handleTagClick(tag)}
                             className={`
-                            px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200
+                            px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 backdrop-blur-sm border
                             ${selectedTags.includes(tag)
-                                    ? 'bg-gradient-to-r from-[#004e9C] to-[#004e9C] text-white shadow-md scale-105'
-                                    : 'bg-[#004e9C]/70 text-blue-50 hover:bg-[#004e9C]/80 hover:scale-105'
+                                    ? 'bg-white text-[#004C9C] border-white shadow-lg scale-105 font-bold'
+                                    : 'bg-white/5 text-white/90 border-white/20 hover:bg-white/15 hover:border-white/40 hover:scale-105'
                                 }
                         `}
                         >
-                            {getDisplayName(tag)} ({tagCounts[tag] || 1})
+                            {getDisplayName(tag)}
                         </button>
                     ))}
                 </div>

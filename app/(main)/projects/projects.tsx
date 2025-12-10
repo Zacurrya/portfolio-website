@@ -6,7 +6,7 @@ import ProjectCard from './_components/project-card';
 import SeeMoreCard from './_components/see-more-card';
 import ProjectStack from './_components/project-stack';
 import SkillsFilter from './_components/skills-filter';
-import { mainFilterTags } from './_contexts/skillNames';
+import { mainFilterTags } from '@/app/lib/skills-config';
 import Banner from './_components/banner';
 
 const Projects = () => {
@@ -35,17 +35,6 @@ const Projects = () => {
         return Array.from(tags).sort();
     }, []);
 
-    // Calculate tag counts for each technology
-    const tagCounts = useMemo(() => {
-        const counts: Record<string, number> = {};
-        allTags.forEach(tag => {
-            counts[tag] = projects.filter(project =>
-                project.tags.includes(tag)
-            ).length;
-        });
-        return counts;
-    }, [allTags]);
-
     // Filter projects based on selected tags
     const filteredProjects = useMemo(() => {
         if (selectedTags.length === 0) {
@@ -59,15 +48,15 @@ const Projects = () => {
     const displayed = filteredProjects;
 
     return (
-        <section id="projects" className="pt-5 pb-60 px-6 bg-gradient-to-b from-white to-blue-50">
-            <Banner />
-            <div className="container mx-auto max-w-6xl pt-10">
+        <section id="projects" className="pb-60 bg-gradient-to-b from-white to-blue-50">
+            <Banner>
                 {/* Skills Filter */}
                 <SkillsFilter
                     allTags={allTags}
-                    tagCounts={tagCounts}
                     onFilterChange={setSelectedTags}
                 />
+            </Banner>
+            <div className="container mx-auto max-w-6xl pt-10 px-6">
 
                 {!isMobile ? (
                     <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">

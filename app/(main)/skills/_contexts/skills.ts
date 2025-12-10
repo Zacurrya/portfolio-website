@@ -14,7 +14,7 @@ export const skills = [
     },
     {
         title: 'Design & Testing',
-        items: ['figma', 'selenium', 'postman', 'tailwind']
+        items: ['figma', 'selenium', 'postman', 'tailwindcss']
     }
 ];
 

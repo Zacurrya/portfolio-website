@@ -1,7 +1,7 @@
 "use client";
 import WaveDivider from "../ui/wave-divider";
 import SocialIcons from "../ui/social-icons";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Navbar() {
     // Define navigation links
@@ -12,9 +12,27 @@ function Navbar() {
     ];
 
     const [open, setOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            // Show navbar when mouse is in top quarter of screen
+            const topQuarter = window.innerHeight / 4;
+            setIsVisible(e.clientY < topQuarter);
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-40 bg-[#004C9C] backdrop-blur-sm overflow-visible">
+        <nav
+            className="fixed top-0 left-0 right-0 z-40 bg-[#004C9C] backdrop-blur-sm overflow-visible transition-transform duration-300 ease-in-out"
+            style={{ transform: isVisible ? 'translateY(0)' : 'translateY(-200px)' }}
+        >
             <div className="container h-10 md:h-16 mx-auto px-4 md:px-6 py-3 relative overflow-visible">
                 {/* Logo */}
                 <a href="#home">
@@ -65,9 +83,9 @@ function Navbar() {
                             {navLinks.map((link) => (
                                 <a key={link.name} href={link.href} className="text-xl font-semibold" onClick={() => setOpen(false)}>{link.name}</a>
                             ))}
-                                    <div className="w-full border-t border-white/20 pt-4 flex justify-center">
-                                        <SocialIcons iconSize="w-6 h-6" showEmail={false} />
-                                    </div>
+                            <div className="w-full border-t border-white/20 pt-4 flex justify-center">
+                                <SocialIcons iconSize="w-6 h-6" showEmail={false} />
+                            </div>
                         </div>
                     </div>
                 )}

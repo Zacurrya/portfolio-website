@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { getSkillDisplayName, getIconUrl } from '../../../lib/tech-icons';
+import { getSkillDisplayName, getIconUrl } from '@/app/lib/skills-config';
 
 type Props = {
     title?: string;

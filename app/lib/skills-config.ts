@@ -1,3 +1,11 @@
+/**
+ * Technology Icons and Skills Configuration
+ * Centralized configuration for all technology icons, display names, and grouping logic
+ */
+
+/**
+ * Maps display names (used in projects) to icon names (used in Devicons)
+ */
 export const techIcons: { [key: string]: string } = {
     "Next.js": "nextjs",
     "Prisma": "prisma",
@@ -16,8 +24,8 @@ export const techIcons: { [key: string]: string } = {
     "Java": "java",
     "C#": "csharp",
     "HTML/CSS": "html,css",
-    "Streamlit": "python",
-    "Plotly": "python",
+    "Streamlit": "streamlit",
+    "Plotly": "plotly",
     "YFinance": "python",
     "FinnHub": "python",
     "TKinter": "python",
@@ -25,16 +33,7 @@ export const techIcons: { [key: string]: string } = {
     "OandaPy": "python",
     "ResNet-50": "pytorch",
     "Unity": "unity",
-};
-
-/**
- * Gets the Devicon CDN URL for a given skill icon
- * @param iconName - The icon name (e.g., "javascript", "react")
- * @param version - The icon version (default: "original")
- * @returns The CDN URL for the icon
- */
-export const getIconUrl = (iconName: string, version: string = "original"): string => {
-    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${iconName}/${iconName}-${version}.svg`;
+    "Selenium": "selenium",
 };
 
 /**
@@ -46,6 +45,7 @@ export const skillDisplayNames: { [key: string]: string } = {
     "typescript": "TypeScript",
     "python": "Python",
     "java": "Java",
+    "csharp": "C#",
     "nodejs": "Node.js",
 
     // Frameworks & Libraries
@@ -57,10 +57,12 @@ export const skillDisplayNames: { [key: string]: string } = {
     "unity": "Unity",
     "streamlit": "Streamlit",
 
-    // Databases & Tools
+    // Databases & ORM
     "postgresql": "PostgreSQL",
     "mysql": "MySQL",
     "prisma": "Prisma",
+
+    // Dev Tools & Infrastructure
     "docker": "Docker",
     "git": "Git",
     "vercel": "Vercel",
@@ -70,7 +72,49 @@ export const skillDisplayNames: { [key: string]: string } = {
     "figma": "Figma",
     "selenium": "Selenium",
     "postman": "Postman",
-    "tailwind": "Tailwind CSS",
+
+    // Styling & Utilities
+    "tailwindcss": "Tailwind CSS",
+    "opencv": "OpenCV",
+
+    // Data & Visualization
+    "plotly": "Plotly",
+
+    // Other
+    "tkinter": "TKinter",
+    "resnet-50": "ResNet-50",
+    "yfinance": "YFinance",
+    "finnhub": "FinnHub",
+    "ta-lib": "TA-Lib",
+    "oandapy": "OandaPy",
+};
+
+/**
+ * Main technologies to show in filter (excluding niche libraries)
+ */
+export const mainFilterTags = [
+    "Next.js",
+    "React",
+    "Python",
+    "FastAPI",
+    "PyTorch",
+    "Prisma",
+    "PostgreSQL",
+    "Unity",
+    "C#",
+    "Streamlit",
+    "TKinter",
+    "Selenium",
+];
+
+/**
+ * Gets the Devicon CDN URL for a given skill icon
+ * @param iconName - The icon name (e.g., "javascript", "react")
+ * @param version - The icon version (default: "original")
+ * @returns The CDN URL for the icon
+ */
+export const getIconUrl = (iconName: string, version: string = "original"): string => {
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${iconName}/${iconName}-${version}.svg`;
 };
 
 /**
