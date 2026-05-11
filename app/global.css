@@ -16,7 +16,6 @@
 
 html,
 body {
-  scroll-behavior: smooth;
   height: 100%;
   background-color: var(--background);
   color: var(--foreground);
@@ -159,19 +158,6 @@ a {
   }
 }
 
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-}
 
 /* Hover glow for text: add this class to any text element to enable
    a smooth glowing effect on hover/focus. */

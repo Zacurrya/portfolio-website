@@ -19,9 +19,9 @@ export default function Page() {
       <SpeedInsights />
       <Navbar />
       {/* Section 1 */}
-      <div className="snap-parent">
+      <div className="w-full max-w-full overflow-hidden">
         <Hero />
-        <main className="min-h-screen relative">
+        <main className="min-h-screen relative w-full max-w-none">
           {/* Section 2 */}
           <About />
           {/* Section 3 */}

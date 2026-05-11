@@ -1,8 +1,21 @@
+"use client";
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import ImageBanner from '../../../components/ui/image-banner';
 import ChevronDown from '../../../components/ui/chevron-down';
 
 const Hero = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const mq = window.matchMedia('(max-width: 639px)');
+        const update = () => setIsMobile(mq.matches);
+        update();
+        mq.addEventListener ? mq.addEventListener('change', update) : mq.addListener(update);
+        return () => mq.removeEventListener ? mq.removeEventListener('change', update) : mq.removeListener(update);
+    }, []);
+
     return (
         <section className="sm:min-h-screen  flex flex-col items-center overflow-hidden">
             <div className="w-full">
@@ -61,9 +74,11 @@ const Hero = () => {
             </div>
 
             {/* Scroll Indicator - Bottom of section */}
-            <div className="mt-auto mb-12 animate-bounce">
-                <ChevronDown href="about" color="text-[#004C9C]" className="opacity-80 hover:opacity-100 transition-opacity" />
-            </div>
+            {!isMobile && (
+                <div className="mt-auto mb-12 animate-bounce">
+                    <ChevronDown href="about" color="text-[#004C9C]" className="opacity-80 hover:opacity-100 transition-opacity" />
+                </div>
+            )}
         </section>
     );
 };
