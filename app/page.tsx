@@ -9,7 +9,7 @@ export const metadata = {
   title: "Zaky's Portfolio",
   description: "Zakariya Yusuf's Portfolio Website",
   icons: {
-    icon: '/navbar-logo.svg'
+    icon: '/logo.svg'
   },
 };
 

@@ -54,7 +54,7 @@ const ImageBanner: React.FC<ImageBannerProps> = (props) => {
                 {/* Top blend gradient (fades into page background) */}
                 {props.topBlend && (
                     <div
-                        className="absolute top-0 left-0 right-0 bg-gradient-to-b from-white to-transparent pointer-events-none z-10"
+                        className="absolute top-0 left-0 right-0 bg-gradient-to-b from-white to-transparent  z-10"
                         style={{ height: topBlendHeight }}
                     />
                 )}
@@ -63,7 +63,7 @@ const ImageBanner: React.FC<ImageBannerProps> = (props) => {
                 {
                     props.bottomBlend && (
                         <div
-                            className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white to-transparent pointer-events-none z-10"
+                            className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white to-transparent  z-10"
                             style={{ height: bottomBlendHeight }}
                         />
                     )

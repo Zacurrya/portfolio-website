@@ -37,7 +37,7 @@ function Navbar() {
                 {/* Logo */}
                 <a href="#home">
                     <img
-                        src="/header-logo.svg"
+                        src="/logo.svg"
                         alt="Zaky Yusuf"
                         className="absolute z-60 w-auto object-contain
                         left-2 h-10

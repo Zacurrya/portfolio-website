@@ -4,7 +4,7 @@ import ChevronDown from '../../../components/ui/chevron-down';
 
 const Hero = () => {
     return (
-        <section className="sm:min-h-screen snap-section flex flex-col items-center overflow-hidden">
+        <section className="sm:min-h-screen  flex flex-col items-center overflow-hidden">
             <div className="w-full">
                 <ImageBanner
                     bottomBlend={true}

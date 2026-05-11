@@ -18,11 +18,16 @@ export const techIcons: { [key: string]: string } = {
     "SQL": "mysql",
     "Apache": "apache",
     "React": "react",
+    "React Native": "react",
     "Node.js": "nodejs",
     "Tailwind CSS": "tailwindcss",
+    "TailwindCSS": "tailwindcss",
+    "TypeScript": "typescript",
     "Python": "python",
     "Java": "java",
     "C#": "csharp",
+    "Supabase": "supabase",
+    "Expo": "expo",
     "HTML/CSS": "html,css",
     "Streamlit": "streamlit",
     "Plotly": "plotly",
@@ -50,17 +55,21 @@ export const skillDisplayNames: { [key: string]: string } = {
 
     // Frameworks & Libraries
     "react": "React",
+    "react-native": "React Native",
     "nextjs": "Next.js",
     "express": "Express",
     "fastapi": "FastAPI",
     "pytorch": "PyTorch",
     "unity": "Unity",
     "streamlit": "Streamlit",
+    "expo": "Expo",
 
     // Databases & ORM
     "postgresql": "PostgreSQL",
     "mysql": "MySQL",
     "prisma": "Prisma",
+    "supabase": "Supabase",
+    "amazon-s3": "Amazon S3",
 
     // Dev Tools & Infrastructure
     "docker": "Docker",
@@ -114,7 +123,17 @@ export const mainFilterTags = [
  * @returns The CDN URL for the icon
  */
 export const getIconUrl = (iconName: string, version: string = "original"): string => {
-    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${iconName}/${iconName}-${version}.svg`;
+    const iconAliases: { [key: string]: string } = {
+        "react-native": "react",
+        "amazon-s3": "amazonwebservices",
+    };
+    const resolvedIcon = iconAliases[iconName.toLowerCase()] || iconName;
+    const iconVersionOverrides: { [key: string]: string } = {
+        "amazonwebservices": "original-wordmark",
+    };
+    const resolvedVersion = iconVersionOverrides[resolvedIcon.toLowerCase()] || version;
+
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${resolvedIcon}/${resolvedIcon}-${resolvedVersion}.svg`;
 };
 
 /**

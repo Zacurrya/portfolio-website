@@ -4,13 +4,13 @@ import Marquee from "react-fast-marquee";
 interface WaveDividerProps {
     position: 'top' | 'bottom';
     className?: string;
-    /** Height of the wave SVG in pixels (defaults to 50) */
+    // Height of the wave SVG in pixels (defaults to 50) 
     height?: number;
-    /** Reverse the marquee direction */
+    // Reverse the marquee direction
     reverse?: boolean;
-    /** CSS color value used for the wave; defaults to 'currentColor' so parent text color controls it */
+    // CSS color value used for the wave; defaults to 'currentColor' so parent text color controls it
     color?: string;
-    /** Speed for the marquee (pixels per second). Defaults to 50. */
+    // Speed for the marquee (pixels per second). Defaults to 50.
     speed?: number;
 }
 

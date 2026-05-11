@@ -4,17 +4,21 @@ const DrivesCard = ({ Content }) => {
             {/* Glow/Blur Effect - Orange/Amber tones to match What drives me gradient */}
             <div className="absolute -inset-1 bg-gradient-to-r from-orange-200 to-amber-300 rounded-2xl blur opacity-15 group-hover:opacity-30 transition duration-1000 group-hover:duration-200" />
             {/* Glass Panel Content */}
-            <div className="relative h-full glass-panel p-6 md:p-8 rounded-2xl border border-white/60 bg-white/60 shadow-xl backdrop-blur-md">
-                <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 tracking-tight">
+            <div className="relative h-full glass-panel p-2 md:p-3 rounded-2xl border border-white/60 bg-white/40 shadow-xl backdrop-blur-lg">
+                <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 tracking-tight drop-shadow-sm">
                     <span className="text-gradient-orange">What drives me?</span>
                 </h3>
-                <ul className="space-y-3 md:space-y-4">
+                <ul className="space-y-2 md:space-y-3">
                     {Content.about.drives.items.map((item: any, index: number) => (
                         <li key={index} className="flex items-start gap-3 md:gap-4">
-                            <div className="shrink-0 text-blue-600 mt-0.5 text-2xl md:text-3xl">
+                            <div
+                                className={`shrink-0 mt-0.5 text-xl md:text-2xl ${item.muted ? 'text-gray-400 opacity-20' : 'text-blue-600'}`}
+                            >
                                 {item.icon}
                             </div>
-                            <span className="text-gray-700 text-sm md:text-base font-medium leading-snug">
+                            <span
+                                className={`text-xs md:text-sm font-medium leading-snug ${item.muted ? 'text-gray-400 opacity-20' : 'text-gray-700'}`}
+                            >
                                 {item.text}
                             </span>
                         </li>

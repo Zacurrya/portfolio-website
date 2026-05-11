@@ -3,7 +3,7 @@ import EmailForm from '../../(main)/contactForm/_components/email-form';
 
 const Footer = () => {
     return (
-        <footer id="contact" className="snap-section relative">
+        <footer id="contact" className=" relative">
             <div className="bg-gradient-to-b from-[#004C9C] to-[#002d5c] pt-8 pb-16 text-white">
                 {/* Wave Top */}
                 <div className="absolute top-0 left-0 right-0 transform -translate-y-full text-[#004C9C]">

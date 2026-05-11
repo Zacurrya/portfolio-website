@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --primary: #004098;
+  --pocari-blue: #004C9C;
   /* Pocari Blue */
   --primary-foreground: #ffffff;
   --secondary: #f3f4f6;
@@ -13,22 +14,9 @@
   --border: #e5e7eb;
 }
 
-/* 1. Parent Class (Container) */
-.snap-parent {
-  /* Use Tailwind for the standard classes */
-  @apply snap-y snap-proximity;
-}
-
-/* 2. Child Class (Sections to Snap To) */
-.snap-section {
-  /* Use Tailwind for the standard snap-align class */
-  @apply snap-start;
-}
-
 html,
 body {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
   height: 100%;
   background-color: var(--background);
   color: var(--foreground);
@@ -68,14 +56,54 @@ a {
 
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 12px 24px -16px rgba(0, 0, 0, 0.25);
 }
 
 .text-gradient {
   background: linear-gradient(to right, #8cb0e2, #0062ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.blue-text-gradient {
+  background: linear-gradient(to right, #8cb0e2, #0062ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.red-text-gradient {
+  background: linear-gradient(to right, #f87171, #dc2626);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.orange-text-gradient {
+  background: linear-gradient(to right, #f59e0b, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.purple-text-gradient {
+  background: linear-gradient(to right, #a855f7, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.green-text-gradient {
+  background: linear-gradient(to right, #34d399, #16a34a);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

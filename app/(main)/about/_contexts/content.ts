@@ -9,33 +9,66 @@ const Content = {
     },
     about: {
         title: {
-            start: "More Than Just",
-            highlight: "Code"
+            start: "About",
+            highlight: "Me"
         },
-        paragraphs: ["Hi, I'm Zaky, a Computer Science student with a dream to positively impact people's lives through technology.",
-            "I recently studied abroad and worked with and made friends with people from around the world. Since then, I've wanted to work in a global company where I can continue to grow as a person and as a developer.",
-            "I'm always building something new. Whether it's an API, a full-stack website, or an interactive GUI. I'm now looking for an internship where I can apply that same builder's mindset to large-scale projects with global reach."],
+        paragraphs: [
+            "I'm Zaky, a Computer Science student and full-stack developer with a passion for building meaningful software. I'm driven by the belief that technology, when done right, can genuinely improve people's lives - and I want my work to reflect that."
+        ],
         drives: {
             title: "What drives me?",
             items: [
                 {
-                    icon: "💡",
-                    text: "Building efficient solutions that positively impact people's lives"
-                },
-                {
                     icon: "⚡",
-                    text: "Creating intuitive and unique user experiences"
+                    text: "Solving complex problems and seeing tangible results"
                 },
                 {
                     icon: "🌍",
-                    text: "Learning from a range of people with unique perspectives"
+                    text: "Building products that reach and help as many people as possible"
                 },
                 {
-                    icon: "🎯",
-                    text: "Fulfilling my dreams of travel and helping others"
+                    icon: "🤝",
+                    text: "Collaborating and connecting with a diverse range of people"
+                },
+                {
+                    icon: "😊",
+                    text: "Exploring my external interests and hobbies through my work and personal projects"
+                },
+                {
+                    icon: "🤫",
+                    text: "Money",
+                    muted: true
                 }
             ]
-        }
+        },
+        currently: {
+            title: "Currently..",
+            items: [
+                {
+                    icon: "/images/education/qmul-logo.png",
+                    text: "Studying Computer Science at Queen Mary, University of London"
+                },
+                {
+                    icon: "/images/misc/fdm-relocate.svg",
+                    text: "Building FDM Relocate - a platform for relocating consultants to find properties and connect with colleagues"
+                },
+                {
+                    icon: "/svgs/map-pin.svg",
+                    text: "Based in London, UK"
+                }
+            ]
+        },
+        interests: [
+            "Full-Stack Development",
+            "AI & Machine Learning",
+            "3D Web Experiences",
+            "Badminton",
+            "Open Source",
+            "Travel",
+            "Finance & Trading",
+            "Politics",
+            "Urban Planning"
+        ]
     }
 };
 

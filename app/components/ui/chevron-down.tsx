@@ -62,7 +62,7 @@ const ChevronDown: React.FC<ChevronDownProps> = ({ href = 'about', color = 'text
     if (isPhone) return null;
 
     return (
-        <div className={`transition-all duration-300 ease-in-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-6 pointer-events-none'} ${className}`}>
+        <div className={`transition-all duration-300 ease-in-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-6 '} ${className}`}>
             <a
                 href={`#${href}`}
                 className={`inline-flex items-center justify-center px-6 py-3 bg-transparent ${color} rounded-full`}

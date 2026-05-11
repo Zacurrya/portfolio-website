@@ -14,7 +14,7 @@ const SeeMoreCard = () => {
                 {/* This div sits behind the content. It uses an inline SVG data-uri for the pattern. 
                 Adjust opacity-[0.07] to make it more or less visible. */}
                 <div
-                    className="absolute inset-0 opacity-[0.07] z-0 pointer-events-none blend-overlay"
+                    className="absolute inset-0 opacity-[0.07] z-0 blend-overlay"
                     style={{
                         // Inline SVG of a white question mark, repeated.
                         backgroundImage: `url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='18' fill='%23ffffff'%3E%3F%3C/text%3E%3C/svg%3E")`,

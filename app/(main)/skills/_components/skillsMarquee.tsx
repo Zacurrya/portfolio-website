@@ -2,7 +2,7 @@
 import Marquee from "react-fast-marquee";
 import { skills } from "../_contexts/skills";
 import Image from "next/image";
-import { getIconUrl } from "../../../lib/tech-icons";
+import { getIconUrl } from "@/app/lib/skills-config";
 
 const SkillsMarquee = () => {
     return (
