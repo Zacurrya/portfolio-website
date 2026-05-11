@@ -9,7 +9,7 @@ const Header = () => {
             <div>
                 <div className="flex pt-2 items-center justify-between">
                     {/* Logo */}
-                    <Link href="/" className="z-100 hover:opacity-90 transition-opacity block flex-shrink-0">
+                    <Link href="/" className="z-100 block flex-shrink-0">
                         <img
                             src="/logo-w-title.svg"
                             alt="Zaky Yusuf"
@@ -52,7 +52,10 @@ const Header = () => {
             </div>
 
             {/* Wave Bottom */}
-            <div className="text-[#004C9C] absolute top-17 z-50 left-0 right-0 w-full overflow-hidden leading-none ">
+            <div 
+                className="text-[#004C9C] absolute top-17 z-50 left-0 right-0 w-full overflow-hidden leading-none"
+                style={{ willChange: 'transform', isolation: 'isolate' }}
+            >
                 <WaveDivider position="bottom" height={40} />
             </div>
         </header>
