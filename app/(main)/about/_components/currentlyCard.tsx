@@ -8,19 +8,21 @@ const CurrentlyCard = ({ Content }) => {
             {/* Glass Panel Content */}
             <div className="relative h-full glass-panel p-2 md:p-3 rounded-2xl border border-white/60 bg-white/40 shadow-xl backdrop-blur-lg">
                 <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 tracking-tight drop-shadow-sm">
-                    <span className="blue-text-gradient">Currently..</span>
+                    <span className="blue-text-gradient">{Content.about.currently.title}</span>
                 </h3>
-                <ul className="space-y-3 md:space-y-4">
+
+                {/* Currently list */}
+                <ul className="flex flex-col gap-3">
                     {Content.about.currently.items.map((item: any, index: number) => (
-                        <li key={index} className="flex items-start gap-3 md:gap-4">
+                        <li key={index} className="flex flex-row gap-4 items-center">
                             {typeof item.icon === 'string' && (item.icon.startsWith('/images/') || item.icon.startsWith('/svgs/')) ? (
                                 <span className="shrink-0 mt-0.5">
                                     <Image
                                         src={item.icon}
                                         alt=""
-                                        width={50}
-                                        height={50}
-                                        className="rounded bg-white/80 p-1"
+                                        width={44}
+                                        height={44}
+                                        className="rounded-xl p-1 bg-blue-50/50"
                                     />
                                 </span>
                             ) : (

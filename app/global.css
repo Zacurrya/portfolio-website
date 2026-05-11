@@ -158,39 +158,3 @@ a {
     transform: translateY(0);
   }
 }
-
-
-/* Hover glow for text: add this class to any text element to enable
-   a smooth glowing effect on hover/focus. */
-.text-hover-glow {
-  /* longer transition so glow fades out gently */
-  transition: text-shadow 700ms cubic-bezier(.22, .9, .32, 1), filter 700ms cubic-bezier(.22, .9, .32, 1);
-  will-change: text-shadow, filter;
-}
-
-/* Soft glow on hover/focus. Rely on transition for smooth fade-in/out. */
-/* Soft glow on hover/focus. Rely on transition for smooth fade-in/out. */
-.text-hover-glow:hover,
-.text-hover-glow:focus {
-  text-shadow: 0 0 5px rgba(88, 121, 255, 0.4), 0 0 12px rgba(59, 130, 246, 0.25);
-  filter: drop-shadow(0 4px 10px rgba(59, 130, 246, 0.1));
-}
-
-.text-gradient-purple {
-  background: linear-gradient(to right, #e879f9, #c084fc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-.text-hover-glow-purple {
-  transition: text-shadow 700ms cubic-bezier(.22, .9, .32, 1), filter 700ms cubic-bezier(.22, .9, .32, 1);
-  will-change: text-shadow, filter;
-}
-
-.text-hover-glow-purple:hover,
-.text-hover-glow-purple:focus {
-  text-shadow: 0 0 8px rgba(232, 121, 249, 0.6), 0 0 16px rgba(192, 132, 252, 0.4);
-  filter: drop-shadow(0 4px 12px rgba(192, 132, 252, 0.3));
-}
