@@ -17,12 +17,12 @@ const Hero = () => {
 
     return (
         <section className="sm:min-h-screen  flex flex-col items-center overflow-hidden">
-            <div className="w-full">
+            <div className="w-full -mt-42">
                 <ImageBanner
                     bottomBlend={true}
                     bottomBlendHeight="50px"
-                    imageSrc="/pics/me-at-canary-wharf.jpg"
-                    height={55}
+                    imageSrc="/pics/me-at-canton-tower-cropped.png"
+                    height={71}
                 >
                     <div className="relative w-full h-full flex flex-col items-center justify-center px-4">
 

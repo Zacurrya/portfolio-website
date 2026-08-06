@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
-const path = require('path');
-
 const nextConfig = {
   reactStrictMode: true,
+  turbopack: {},
   images: {
     remotePatterns: [
       {
@@ -17,14 +16,6 @@ const nextConfig = {
     // untrusted SVGs. If you'd rather avoid enabling this globally,
     // add `unoptimized` to the specific <Image /> instances instead.
     dangerouslyAllowSVG: true,
-  },
-  webpack: (config) => {
-    // Add @ alias to the components folder
-    config.resolve = config.resolve || {};
-    config.resolve.alias = Object.assign({}, config.resolve.alias, {
-      '@': path.join(__dirname, 'components'),
-    });
-    return config;
   },
 };
 
