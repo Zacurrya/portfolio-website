@@ -10,8 +10,8 @@ const GithubContribution = () => {
                 <h3 className="text-lg md:text-xl font-semibold mb-3 tracking-tight drop-shadow-sm">
                     <span className="green-text-gradient">Activity</span>
                 </h3>
-                <div className="w-full overflow-hidden">
-                    <div className="min-w-[520px]">
+                <div className="w-full max-w-full overflow-hidden">
+                    <div className="w-full min-w-0 max-w-full">
                         <GitHubCalendar
                             username="Zacurrya"
                             blockSize={8}

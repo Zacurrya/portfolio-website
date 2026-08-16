@@ -3,6 +3,18 @@ const imagePath = '/images/projects/'
 
 export const projects = [
   {
+      title: "Qpay",
+      description: "Made a demo QR payment system, inspired by the time I spent interacting with similar systems in China",
+      tags: ["React Native", "Expo", "Supabase", "TypeScript"],
+      link: "https://github.com/Zacurrya/qpay",
+      images: [
+        imagePath+'qpay/landing-screen.jpg',
+        imagePath+'qpay/home-screen.jpg',
+        imagePath+'qpay/receive-payment-screen.jpg',
+        imagePath+'qpay/sign-in-screen.jpg',
+      ]
+  },
+  {
     title: 'FDM Relocate',
     description:
       'A mobile app built to help relocating consultants at FDM find flats easier and quicker.',
@@ -16,27 +28,13 @@ export const projects = [
     ],
   },
   {
-    title: 'Nomad Housing',
-    description:
-      'Full-stack property platform with Next.js, Prisma, and PostgreSQL. Features a Python microservice for real-time data and an LLM for natural language search.',
-    tags: ['Next.js', 'Prisma', 'PostgreSQL', 'Python'],
-    link: 'https://github.com/Zacurrya/nomad-housing',
-    images: [imagePath+'nomad-housing/1.png'],
-  },
-  {
-    title: 'JLPT Fast',
-    description:
-      'Vibe-coded a language learning website to make learning Japanese more fun. Intend to clean up the code and progress it.',
-    tags: ['Next.js', 'Prisma', 'Vercel'],
-    link: 'https://github.com/Zacurrya/JLPT-Fast',
-    images: [imagePath+'jlpt-fast/1.png']
-  },
-  {
-      title: "Nomad Housing",
-      description: "Full-stack property platform with Next.js, Prisma, and PostgreSQL. Features a Python microservice for real-time data and an LLM for natural language search.",
-      tags: ["Next.js", "Prisma", "PostgreSQL", "FastAPI", "Selenium"],
-      link: "https://github.com/Zacurrya/nomad-housing",
-      images: [imagePath+'nomad-housing/1.png']
+    title: 'Transcript API',
+    description: 'Scrapes for company earnings call info, consisting of the transcript, key takeaways, etc., with the transcript being fed into a sentiment NLP model that returns a sentiment score.',
+    tags: ['FastAPI', 'Supabase', 'BeautifulSoup'],
+    link: "",
+    images: [
+
+    ]
   },
   {
       title: "NutriVise",
@@ -51,19 +49,5 @@ export const projects = [
       tags: ["Streamlit", "Plotly", "YFinance", "FinnHub"],
       link: "https://github.com/Zacurrya/trading-dashboard",
       images: [imagePath+'trading-dashboard/1.png']
-  },
-  {
-      title: "Trading Bot",
-      description: "Automated trading system using TA-Lib for technical analysis and Oanda API for execution, with a custom TKinter GUI for monitoring.",
-      tags: ["TKinter", "TA-Lib", "OandaPy", "Plotly"],
-      link: "https://github.com/Zacurrya/trading-bot",
-      images: [imagePath+'trading-bot/1.png']
-  },
-  {
-      title: "Slingshot Wars",
-      description: "PvP Angry Birds-style game made for my A-Level final project.",
-      tags: ["Unity", "C#"],
-      link: "https://github.com/Zacurrya/NEA-PROJECT-DEFINITIVE",
-      images: [imagePath+'slingshot-wars/1.png']
   }
 ];

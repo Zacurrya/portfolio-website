@@ -17,7 +17,7 @@ const Hero = () => {
 
     return (
         <section className="sm:min-h-screen  flex flex-col items-center overflow-hidden">
-            <div className="w-full -mt-42">
+            <div className="w-full -mt-42 lg:pt-8">
                 <ImageBanner
                     bottomBlend={true}
                     bottomBlendHeight="50px"
@@ -32,16 +32,16 @@ const Hero = () => {
                             {/* Subtitle & Title */}
                             <div className="flex flex-col items-center gap-2">
                                 <p className="text-blue-200 text-xs sm:text-sm md:text-base font-bold tracking-[0.25em] uppercase drop-shadow-md">
-                                    Full Stack Developer
+                                    Full-Stack Developer
                                 </p>
-                                <h1 className="text-white text-5xl sm:text-6xl md:text-8xl font-extrabold leading-none tracking-tight drop-shadow-2xl">
+                                <h1 className="text-white text-5xl sm:text-6xl md:text-8xl font-medium leading-none tracking-tight drop-shadow-2xl">
                                     Zaky Yusuf
                                 </h1>
                             </div>
 
                             {/* Tagline */}
                             <h2 className="text-white/90 text-sm sm:text-lg md:text-xl font-medium leading-relaxed max-w-2xl drop-shadow-lg text-center">
-                                Building software to solve real issues and benefit society
+                                Globally-minded with a goal to work in transformative companies
                             </h2>
 
                             {/* Location Badge */}
@@ -57,7 +57,7 @@ const Hero = () => {
             </div>
 
             {/* Buttons - Outside Banner for split layout */}
-            <div className="flex text-xs sm:text-[1rem] md:text-md lg:text-lg flex-row items-center gap-4 mt-12 sm:mt-16 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <div className="flex text-xs sm:text-[1rem] md:text-md lg:text-lg flex-row items-center gap-4 mt-12 sm:mt-16 mb-8 sm:mb-10 animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 <a
                     href="#projects"
                     className="w-full sm:w-auto px-10 py-3.5 bg-[#004C9C] text-white font-semibold rounded-full hover:bg-[#003a7a] hover:scale-105 transition-all shadow-lg hover:-translate-y-1 text-center min-w-[160px]"
@@ -74,7 +74,7 @@ const Hero = () => {
 
             {/* Scroll Indicator - Bottom of section */}
             {!isMobile && (
-                <div className="mt-auto mb-12 animate-bounce">
+                <div className="mt-4 mb-14 animate-bounce">
                     <ChevronDown href="about" color="text-[#004C9C]" className="opacity-80 hover:opacity-100 transition-opacity" />
                 </div>
             )}

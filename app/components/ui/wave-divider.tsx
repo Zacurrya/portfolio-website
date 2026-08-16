@@ -56,12 +56,13 @@ const WaveDivider: React.FC<WaveDividerProps> = ({
             <div
                 style={{
                     display: 'flex',
-                    width: '2880px',
+                    width: '4320px',
                     animation: `wave-scroll ${duration}s linear infinite`,
                     animationDirection: reverse ? 'reverse' : 'normal',
                     willChange: 'transform',
                 }}
             >
+                {svg}
                 {svg}
                 {svg}
             </div>

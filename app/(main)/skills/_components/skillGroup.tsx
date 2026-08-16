@@ -16,11 +16,11 @@ const SkillGroup: React.FC<Props> = ({ title, skills, compact = false }) => {
                     {title}
                 </h4>
             )}
-            <div className={compact ? "flex flex-wrap gap-2 items-center" : "flex flex-wrap gap-3 items-center"}>
+            <div className={compact ? "flex flex-wrap gap-2 items-center max-w-full" : "flex flex-wrap gap-3 items-center max-w-full"}>
                 {skills.map((skill) => (
                     <div
                         key={skill}
-                        className={compact ? "flex items-center gap-2 bg-white/60 backdrop-blur-sm px-2 py-1.5 rounded-md shadow-sm" : "flex items-center gap-2 bg-white/60 backdrop-blur-sm px-3 py-2 rounded-md shadow-sm"}
+                        className={compact ? "flex items-center gap-2 bg-white/60 backdrop-blur-sm px-2 py-1.5 rounded-md shadow-sm max-w-full" : "flex items-center gap-2 bg-white/60 backdrop-blur-sm px-3 py-2 rounded-md shadow-sm max-w-full"}
                     >
                         <Image
                             src={getIconUrl(skill)}

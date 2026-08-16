@@ -16,7 +16,10 @@
 
 html,
 body {
-  height: 100%;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100%;
+  overflow-x: hidden;
   background-color: var(--background);
   scroll-behavior: smooth;
   color: var(--foreground);
@@ -27,13 +30,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 ::selection {
   background-color: var(--primary);
   color: var(--primary-foreground);
 }
 
 /* Custom Utilities */
-/* Prevent text selection site-wide by default */
+/* Allow normal text selection throughout the site */
 h1,
 h2,
 h3,
@@ -45,7 +52,7 @@ span,
 li,
 label,
 a {
-  user-select: none;
+  user-select: text;
 }
 
 /* Override class to allow text selection (for hero) */

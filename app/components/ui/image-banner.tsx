@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 interface ImageBannerProps {
@@ -24,14 +24,28 @@ const ImageBanner: React.FC<ImageBannerProps> = (props) => {
     const bottomBlendHeight = props.bottomBlendHeight || '100px';
     const scale = Math.max(1, typeof props.scaleFactor === 'number' ? props.scaleFactor : 1);
     const blur = typeof props.blurFactor === 'number' && props.blurFactor > 0 ? props.blurFactor : 0;
+    const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        const mediaQuery = window.matchMedia('(min-width: 1024px)');
+        const update = () => setIsLargeScreen(mediaQuery.matches);
+
+        update();
+        mediaQuery.addEventListener ? mediaQuery.addEventListener('change', update) : mediaQuery.addListener(update);
+
+        return () => mediaQuery.removeEventListener ? mediaQuery.removeEventListener('change', update) : mediaQuery.removeListener(update);
+    }, []);
 
     const defaultHeight = 50;
     const containerHeightStyle = typeof props.height === 'number'
         ? `${props.height}vh`
         : `${defaultHeight}vh`;
+    const effectiveScale = isLargeScreen ? Math.max(scale * 1.08, 1.08) : scale;
 
     return (
-        <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] animate-slide-up" style={{ height: containerHeightStyle }}>
+        <div className="relative w-full max-w-[1280px] mx-auto overflow-hidden animate-slide-up lg:rounded-none" style={{ height: containerHeightStyle }}>
 
             {/* 1. Background Image Container */}
             <div className="absolute inset-0 w-full h-full overflow-hidden">
@@ -42,7 +56,7 @@ const ImageBanner: React.FC<ImageBannerProps> = (props) => {
                     className="object-cover"
                     style={{
                         objectPosition: 'center',
-                        transform: `scale(${scale})`,
+                        transform: `scale(${effectiveScale})`,
                         transformOrigin: 'center',
                         filter: blur ? `blur(${blur}px)` : undefined,
                     }}

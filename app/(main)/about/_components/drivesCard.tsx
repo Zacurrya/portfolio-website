@@ -8,11 +8,11 @@ const DrivesCard = ({ Content }) => {
                 <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 tracking-tight drop-shadow-sm">
                     <span className="text-gradient-orange">What drives me?</span>
                 </h3>
-                <ul className="space-y-2 md:space-y-3">
+                <ul className="space-y-2.5 md:space-y-3.5">
                     {Content.about.drives.items.map((item: any, index: number) => (
-                        <li key={index} className="flex items-start gap-3 md:gap-4">
+                        <li key={index} className="flex items-center gap-3 md:gap-4">
                             <div
-                                className={`shrink-0 mt-0.5 text-xl md:text-2xl ${item.muted ? 'text-gray-400 opacity-20' : 'text-blue-600'}`}
+                                className={`shrink-0 flex items-center justify-center text-xl md:text-2xl leading-none ${item.muted ? 'text-gray-400 opacity-20' : 'text-blue-600'}`}
                             >
                                 {item.icon}
                             </div>
