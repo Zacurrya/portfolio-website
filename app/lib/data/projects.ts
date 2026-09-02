@@ -5,7 +5,7 @@ export const projects = [
   {
       title: "Qpay",
       description: "Made a demo QR payment system, inspired by the time I spent interacting with similar systems in China",
-      tags: ["React Native", "Expo", "Supabase", "TypeScript"],
+      tags: ["React Native", "Expo", "Supabase", "TypeScript", "Java", "Spring Boot"],
       link: "https://github.com/Zacurrya/qpay",
       images: [
         imagePath+'qpay/landing-screen.jpg',

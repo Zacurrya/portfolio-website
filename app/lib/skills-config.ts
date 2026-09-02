@@ -25,6 +25,7 @@ export const techIcons: { [key: string]: string } = {
     "TypeScript": "typescript",
     "Python": "python",
     "Java": "java",
+    "Spring Boot": "spring",
     "C#": "csharp",
     "Supabase": "supabase",
     "Expo": "expo",

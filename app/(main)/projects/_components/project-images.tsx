@@ -24,6 +24,18 @@ const ProjectImages = ({ images, alt, intervalMs = 4000 }: Props) => {
 
     const current = safeImages[activeIndex] || safeImages[0];
 
+    if (!current) {
+        return (
+            <div
+                role="img"
+                aria-label={`${alt} has no preview image`}
+                className="flex h-full w-full items-center justify-center bg-black/10 text-6xl"
+            >
+                ???
+            </div>
+        );
+    }
+
     return (
         <img
             src={current}

@@ -11,6 +11,7 @@ interface ImageBannerProps {
     bottomBlend?: boolean;
     topBlendHeight?: string;
     bottomBlendHeight?: string;
+    loading?: 'eager' | 'lazy';
     /** Multiplier to scale the background image for a zoom effect. Values < 1 are ignored; default is 1. */
     scaleFactor?: number;
     /** Background blur in pixels to apply to the banner image (default 0). */
@@ -53,6 +54,7 @@ const ImageBanner: React.FC<ImageBannerProps> = (props) => {
                     src={props.imageSrc}
                     alt="Banner Image"
                     fill
+                    loading={props.loading}
                     className="object-cover"
                     style={{
                         objectPosition: 'center',

@@ -59,15 +59,48 @@ const Content = {
             ]
         },
         interests: [
-            "Full-Stack Development",
-            "AI & Machine Learning",
-            "3D Web Experiences",
-            "Badminton",
-            "Open Source",
-            "Travel",
-            "Finance & Trading",
-            "Politics",
-            "Urban Planning"
+            {
+                label: "Full-stack Dev",
+                backgroundColor: "bg-blue-100",
+                textColor: "text-blue-800",
+                emoji: "💻"
+            },
+            {
+                label: "AI & Machine Learning",
+                backgroundColor: "bg-green-100",
+                textColor: "text-green-800",
+                emoji: "🧠"
+            },
+            {
+                label: "Badminton",
+                backgroundColor: "bg-yellow-100",
+                textColor: "text-yellow-800",
+                emoji: "🏸"
+            },
+            {
+                label: "Travel",
+                backgroundColor: "bg-sky-100",
+                textColor: "text-sky-800",
+                emoji: "✈️"
+            },
+            {
+                label: "Finance & Trading",
+                backgroundColor: "bg-red-100",
+                textColor: "text-red-800",
+                emoji: "📉"
+            },
+            {
+                label: "Politics",
+                backgroundColor: "bg-purple-100",
+                textColor: "text-purple-800",
+                emoji: "😩"
+            },
+            {
+                label: "Urban Planning",
+                backgroundColor: "bg-indigo-100",
+                textColor: "text-indigo-800",
+                emoji: "📐"
+            }
         ]
     }
 };

@@ -24,7 +24,7 @@ const About = () => {
 
             {/* Narrative Section */}
             <div
-                className="mx-auto max-w-7xl px-4 pt-8 md:px-6 md:pt-6 md:pb-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-18 items-start">
+                className="mx-auto max-w-7xl px-4 pt-8 pb-12 md:px-6 md:pt-6 md:pb-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-18 items-start">
                 {/* Left Column: Narrative Text */}
                 <div className="w-full min-w-0 space-y-4 md:space-y-6 text-base md:text-[1.05rem] text-gray-900 leading-relaxed md:leading-loose">
                     <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
@@ -56,19 +56,16 @@ const About = () => {
                                 <span className="purple-text-gradient">Interests</span>
                             </h3>
                             <div className="flex flex-wrap gap-2 md:gap-3">
-                                {Content.about.interests.map((tag: string, index: number) => (
+                                {Content.about.interests.map((interest, index) => (
                                     <span
                                         key={index}
-                                        className="px-3 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-xs md:text-sm text-gray-800"
+                                        className={`px-3 py-1 ${interest.backgroundColor} border border-current/20 rounded-full text-xs md:text-sm ${interest.textColor}`}
                                     >
-                                        {tag}
+                                        {interest.emoji ? `${interest.emoji} ` : ''}{interest.label}
                                     </span>
                                 ))}
                             </div>
                         </div>
-                    </div>
-                    <div className="pt-2">
-                        <GithubContrib />
                     </div>
                 </div>
 
@@ -148,6 +145,9 @@ const About = () => {
                                 ) : null}
                             </AnimatePresence>
                         </div>
+                    </div>
+                    <div className="pt-2">
+                        <GithubContrib />
                     </div>
                 </div>
             </div>

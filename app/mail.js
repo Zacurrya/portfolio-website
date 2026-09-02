@@ -1,5 +1,5 @@
 emailjs.init({
-  publicKey: 'D6mJ2-dJcmk5iLAbW',
+  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
   // Do not allow headless browsers
   blockHeadless: true,
   limitRate: {

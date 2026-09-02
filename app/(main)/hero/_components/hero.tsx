@@ -23,6 +23,7 @@ const Hero = () => {
                     bottomBlendHeight="50px"
                     imageSrc="/pics/me-at-canton-tower-cropped.png"
                     height={71}
+                    loading="eager"
                 >
                     <div className="relative w-full h-full flex flex-col items-center justify-center px-4">
 

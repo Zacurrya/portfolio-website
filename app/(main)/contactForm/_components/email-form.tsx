@@ -3,6 +3,8 @@
 import { useState, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 
+const emailjsPublicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
 const EmailForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -21,7 +23,11 @@ const EmailForm = () => {
 
         try {
             // Initialize EmailJS with your public key
-            emailjs.init('D6mJ2-dJcmk5iLAbW');
+            if (!emailjsPublicKey) {
+                throw new Error('Missing NEXT_PUBLIC_EMAILJS_PUBLIC_KEY');
+            }
+
+            emailjs.init(emailjsPublicKey);
 
             // Send email
             await emailjs.send('service_hjb1skq', 'template_gqccyyt', templateParams);

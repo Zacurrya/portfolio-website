@@ -21,6 +21,7 @@ const educationCard = ({ uni, compact = false }) => {
                     <div>
                         <h4 className={compact ? "text-base font-bold text-gray-900 drop-shadow-sm" : "text-lg font-bold text-gray-900 drop-shadow-sm"}>{uni.name}</h4>
                         <p className={compact ? "text-xs text-gray-700 font-medium drop-shadow-sm" : "text-sm text-gray-700 font-medium drop-shadow-sm"}>{uni.year}</p>
+                        {uni.grade && <p className={compact ? "text-xs text-gray-700 font-medium drop-shadow-sm" : "text-sm text-gray-700 font-medium drop-shadow-sm"}>{uni.grade}</p>}
                     </div>
                 </div>
                 <p className={compact ? "text-xs text-slate-800 font-bold mb-1.5 drop-shadow-sm" : "text-slate-800 font-bold mb-2 drop-shadow-sm"}>{uni.degree}</p>
