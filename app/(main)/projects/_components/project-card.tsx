@@ -9,20 +9,19 @@ interface ProjectCardProps {
         description: string;
         images: string[];
         link: string;
+        demoLink?: string;
+        demoType?: 'link' | 'video';
         tags: string[];
     };
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     const iconGroups = groupTagsByIcon(project.tags);
+    const isVideoDemo = project.demoType === 'video' || /(?:youtube\.com|youtu\.be)/i.test(project.demoLink ?? '');
 
     return (
-        <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[var(--pocari-blue)] rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-2xl group flex flex-col h-full relative"
-        >
+        <div className="bg-[var(--pocari-blue)] rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-2xl group flex flex-col h-full relative">
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex flex-col flex-grow">
             {/* Image Container - overflow-visible to allow tooltips to show */}
             <div className="h-64 lg:h-72 relative">
                 <div className="absolute inset-0 overflow-hidden rounded-t-2xl">
@@ -70,14 +69,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 </div>
             </div>
 
-            {/* Content - Blue section */}
             <div className="px-4 lg:px-5 pt-4 lg:pt-5 pb-4 lg:pb-5 flex flex-col flex-grow">
-                {/* Description */}
                 <p className="text-white leading-relaxed text-sm lg:text-base">
                     {project.description}
                 </p>
             </div>
-        </a>
+            </a>
+
+            {project.demoLink && (
+                <a
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={isVideoDemo ? 'Watch demo on YouTube' : 'View demo'}
+                    title={isVideoDemo ? 'Watch demo on YouTube' : 'View demo'}
+                    className="absolute left-4 top-4 z-30 inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-[var(--pocari-blue)] shadow-md transition-colors hover:bg-blue-100"
+                >
+                    {isVideoDemo ? (
+                        <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
+                            <path fill="#FF0000" d="M23.498 6.186a2.99 2.99 0 0 0-2.106-2.117C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.392.569A2.99 2.99 0 0 0 .502 6.186C0 8.083 0 12 0 12s0 3.917.502 5.814a2.99 2.99 0 0 0 2.106 2.117C4.495 20.5 12 20.5 12 20.5s7.505 0 9.392-.569a2.99 2.99 0 0 0 2.106-2.117C24 15.917 24 12 24 12s0-3.917-.502-5.814Z" />
+                            <path fill="#FFFFFF" d="m9.6 15.5 6.3-3.5-6.3-3.5v7Z" />
+                        </svg>
+                    ) : 'View demo'}
+                </a>
+            )}
+        </div>
     );
 };
 

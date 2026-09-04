@@ -7,6 +7,7 @@ export const projects = [
       description: "Made a demo QR payment system, inspired by the time I spent interacting with similar systems in China",
       tags: ["React Native", "Expo", "Supabase", "TypeScript", "Java", "Spring Boot"],
       link: "https://github.com/Zacurrya/qpay",
+      demoLink: "https://frontend-production-1657.up.railway.app/home",
       images: [
         imagePath+'qpay/landing-screen.jpg',
         imagePath+'qpay/home-screen.jpg',
@@ -20,6 +21,7 @@ export const projects = [
       'A mobile app built to help relocating consultants at FDM find flats easier and quicker.',
     tags: ['React Native', 'Supabase', 'TailwindCSS', 'TypeScript', 'Expo'],
     link: githubUrl+'fdm_relocate',
+    demoLink: "https://www.youtube.com/shorts/KS_c72xNyY8",
     images: [
       imagePath+'fdm-relocate/1.jpg',
       imagePath+'fdm-relocate/2.jpg',
@@ -28,10 +30,11 @@ export const projects = [
     ],
   },
   {
-    title: 'Transcript API',
+    title: 'Earnings Call API',
     description: 'Scrapes for company earnings call info, consisting of the transcript, key takeaways, etc., with the transcript being fed into a sentiment NLP model that returns a sentiment score.',
     tags: ['FastAPI', 'Supabase', 'BeautifulSoup'],
-    link: "",
+    link: "https://github.com/Zacurrya/financial-sentiment-analyser",
+    demoLink: "https://earnings-call-api.onrender.com/docs",
     images: [
 
     ]
@@ -41,6 +44,7 @@ export const projects = [
       description: "AI-powered nutritional analysis app built to support UN sustainable goals. Model trained off of ResNet-50 using PyTorch. Made with an international team as part of my exchange programme.",
       tags: ["PyTorch", "OpenCV", "ResNet-50"],
       link: "https://github.com/Zacurrya/nutrivise",
+      demoLink: "",
       images: [imagePath+'nutrivise/1.png']
   },
   {
@@ -48,6 +52,7 @@ export const projects = [
       description: "Financial analysis tool consolidating stock data with Streamlit and Plotly. Uses LLMs to generate AI-driven market insights.",
       tags: ["Streamlit", "Plotly", "YFinance", "FinnHub"],
       link: "https://github.com/Zacurrya/trading-dashboard",
+      demoLink: "https://zakys-trading-dashboard.streamlit.app/",
       images: [imagePath+'trading-dashboard/1.png']
   }
 ];
